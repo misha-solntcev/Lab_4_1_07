@@ -16,10 +16,8 @@ namespace Lab_4_1_07
             int[] arr = new int[25];
             Random r = new Random();
 
-            double sum_plus = 0;
-            double sum_minus = 0;
-            int count_plus = 0;
-            int count_minus = 0;
+            double sum_plus = 0;            double sum_minus = 0;
+            int count_plus = 0;            int count_minus = 0;
             int count_zero = 0;
             for (int i = 0; i < arr.Length; i++)
             {
@@ -46,6 +44,12 @@ namespace Lab_4_1_07
             Console.WriteLine($"Среднее арифметическое положительных чисел: {sred_plus}");
             Console.WriteLine($"Среднее арифметическое отрицательных чисел: {sred_minus}");
             Console.WriteLine($"Число нулей: {count_zero}");
+
+            // Linq
+            Console.WriteLine("Плюс  " + arr.Where(i => i > 0).Average());
+            Console.WriteLine("Минус " + arr.Where(i => i < 0).Average());
+            Console.WriteLine("Нулей " + arr.Where(i => i == 0).Count());
+
             Console.ReadKey();
         }
     }
